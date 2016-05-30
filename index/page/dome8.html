@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <meta name="renderer" content="webkit">
+    <link rel="shortcut icon" href="/common/image/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>CSS3场景技术</title>
+    <style>
+        body
+        {
+            background: url("../../index/image/ddd.jpg");
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+            height:0px;
+        }
+
+        .map_3d
+        {
+            -moz-perspective: 1509px;
+            perspective: 1509;
+            -webkit-perspective: 1509; /* Safari 和 Chrome */
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+
+        }
+        .wu_3d
+        {
+            -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+        }
+        .map_tu
+        {
+            -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(300px) translateZ(-300px);
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(300px) translateZ(-300px);
+            animation: dh_nav 15s infinite linear ;
+        }
+
+
+/*
+        @keyframes dh_nav {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(300px) translateZ(0px);
+                -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(300px) translateZ(0px);
+            }
+            50% {
+                transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg) translateX(0px) translateY(300px) translateZ(0px);
+                -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg) translateX(0px) translateY(300px) translateZ(0px);
+            }
+            100% {
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(300px) translateZ(0px);
+                -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(300px) translateZ(0px);
+            }
+        }
+
+*/
+        .z-box
+        {
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+        }
+        .z-box div
+        {
+            position: absolute;
+            background: #000;
+            color: #fff;
+            font-size: 90px;
+            line-height: 300px;
+            text-align: center;
+            background: url("../../index/image/shikuai_img.jpg") !important;
+
+        }
+        .z-box
+        {
+            position: absolute;
+
+        }
+        .user_shoubi
+        {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);
+            -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);
+            transform-origin: 50% 50% 0px;
+        }
+        .user_shoubi_1
+        {
+            animation: dh_nav2 1s infinite linear ;
+        }
+        @keyframes dh_nav2 {
+            0% {
+                transform: rotateX(30deg)  rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);
+                -webkit-transform: rotateX(30deg)  rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);
+            }
+            50% {
+                transform: rotateX(-30deg)  rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);
+                -webkit-transform: rotateX(-30deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);
+            }
+            100% {
+                transform: rotateX(30deg)  rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);
+                -webkit-transform: rotateX(30deg)  rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px);
+            }
+        }
+
+        .user_shoubi_2
+        {
+            transform: rotateX(-30deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) ;
+            -webkit-transform: rotateX(-30deg) rotateY(0deg) rotateZ(0deg) translateX(250px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) ;
+            transform-origin: 50% 10% 0px;
+            animation: dh_nav1 1s infinite linear ;
+        }
+        @keyframes dh_nav1 {
+            0% {
+                transform: rotateX(-30deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(250px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) ;
+                -webkit-transform: rotateX(-30deg) rotateY(0deg) rotateZ(0deg) translateX(250px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) ;
+            }
+            50% {
+                transform: rotateX(30deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(250px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) ;
+                -webkit-transform: rotateX(30deg) rotateY(0deg) rotateZ(0deg) translateX(250px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) ;
+            }
+            100% {
+                transform: rotateX(-30deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(250px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) ;
+                -webkit-transform: rotateX(-30deg) rotateY(0deg) rotateZ(0deg) translateX(250px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1) scaleZ(1) ;
+            }
+        }
+        .user_shenti
+        {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(272px) translateY(-248px) translateZ(-10px) scaleX(2.5) scaleY(1) scaleZ(1.3);
+            -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(272px) translateY(-248px) translateZ(-10px) scaleX(2.5) scaleY(1) scaleZ(1.3);
+        }
+        .user_tou
+        {
+            transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(361px) translateY(-437px) translateZ(-10px) scaleX(3.5) scaleY(1) scaleZ(1.3);
+            -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(361px) translateY(-437px) translateZ(-10px) scaleX(3.5) scaleY(1) scaleZ(2.6);
+            animation: dh_nav3 1s infinite linear ;
+        }
+        @keyframes dh_nav3 {
+            0% {
+                transform: rotateX(0deg)  rotateY(0deg) rotateZ(0deg) translateX(361px) translateY(-437px) translateZ(-10px) scaleX(3.5) scaleY(1) scaleZ(1.3);
+                -webkit-transform: rotateX(0deg)  rotateY(-10deg) rotateZ(0deg) translateX(361px) translateY(-437px) translateZ(-10px) scaleX(3.5) scaleY(1) scaleZ(1.6);
+            }
+            50% {
+                transform: rotateX(0deg)  rotateY(0deg) rotateZ(0deg) translateX(361px) translateY(-437px) translateZ(-10px) scaleX(3.5) scaleY(1) scaleZ(1.3);
+                -webkit-transform: rotateX(0deg) rotateY(10deg) rotateZ(0deg) translateX(361px) translateY(-437px) translateZ(-10px) scaleX(3.5) scaleY(1) scaleZ(1.6);
+            }
+            100% {
+                transform: rotateX(0deg)  rotateY(0deg) rotateZ(0deg) translateX(361px) translateY(-437px) translateZ(-10px) scaleX(3.5) scaleY(1) scaleZ(1.3);
+                -webkit-transform: rotateX(0deg)  rotateY(-10deg) rotateZ(0deg) translateX(361px) translateY(-437px) translateZ(-10px) scaleX(3.5) scaleY(1) scaleZ(1.6);
+            }
+        }
+        .map_show
+        {
+            position: absolute;
+            width: 9000px;
+            height:9000px;
+            margin: 0 auto;
+            transform: rotateX(-90deg) rotateY(360deg) rotateZ(90deg) translateX(3577px) translateY(6500px) translateZ(-4050px);
+            -webkit-transform: rotateX(-90deg) rotateY(360deg) rotateZ(90deg) translateX(3577px) translateY(6500px) translateZ(-4050px);
+            background: url("../../index/image/map_img.jpg");
+        }
+
+
+
+
+
+
+
+        /*手臂*/
+
+        .user_shoubi .shang
+        {
+            width: 100px;
+            height: 100px;
+            background: #000;
+            transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(-100px);
+            -webkit-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(-100px);
+        }
+        .user_shoubi .xia
+        {
+            width: 100px;
+            height: 100px;
+            background: #000;
+            transform: rotateX(-90deg) rotateY(360deg) rotateZ(90deg) translateX(0px) translateY(0px) translateZ(400px);
+            -webkit-transform: rotateX(-90deg) rotateY(360deg) rotateZ(90deg) translateX(0px) translateY(0px) translateZ(400px);
+        }
+        .user_shoubi .zuo
+        {
+            width: 100px;
+            height: 300px;
+            background: #ccc;
+            transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg) translateX(-0px) translateY(150px) translateZ(50px);
+            -webkit-transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg) translateX(-0px) translateY(150px) translateZ(50px);
+        }
+        .user_shoubi .you
+        {
+            width: 100px;
+            height: 300px;
+            background: red;
+            transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg) translateX(0px) translateY(150px) translateZ(50px);
+            -webkit-transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg) translateX(0px) translateY(150px) translateZ(50px);
+        }
+        .user_shoubi .qian
+        {
+            width: 100px;
+            height: 300px;
+            background: #000;
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(150px) translateZ(50px);
+            -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(150px) translateZ(50px);
+
+        }
+        .user_shoubi .hou
+        {
+            width: 100px;
+            height: 300px;
+            background: green;
+            transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg) translateX(0px) translateY(150px) translateZ(50px);
+            -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg) translateX(0px) translateY(150px) translateZ(50px);
+        }
+    </style>
+</head>
+
+<body>
+<div class="dui_win_body  map_3d">
+    <div class="dui_header">
+        <h4>今天下午，利用空闲时间了解下css3的3D场景技术，一直对3D热衷的我，居然发现CSS3居然有如此之棒的功能，赶紧给大家展示一下，代码，大家直接右击源代码就好。。
+            <br>
+            <span style="color: red">注意：使用纯CSS3哦，没有使用canvas，这意味着你可以在每个视角的角度上使用html添加表单、图片、以及文字；</span>
+        <br>
+            鄙视你(柴油、崽崽)，QQ：304789685
+            <br>
+            <span style="color: red">ie所有浏览器都不支持css3的3D透视，请使用chrome、火狐、或者360、QQ的急速模式观看效果；</span>
+        </h4>
+    </div>
+<!--
+    <div class="diu_map">
+
+    </div>
+    -->
+    <div class="map_tu">
+        <div class="map_show"></div>
+        <div class="z-box wu_3d user_shoubi user_shoubi_1">
+            <div class="shang"></div>
+            <div class="xia"></div>
+            <div class="zuo"></div>
+            <div class="you"></div>
+            <div class="qian"></div>
+            <div class="hou"></div>
+        </div>
+
+        <div class="z-box wu_3d user_shoubi user_shoubi_2">
+            <div class="shang"></div>
+            <div class="xia"></div>
+            <div class="zuo"></div>
+            <div class="you"></div>
+            <div class="qian"></div>
+            <div class="hou"></div>
+        </div>
+
+        <div class="z-box wu_3d user_shoubi user_shenti">
+            <div class="shang"></div>
+            <div class="xia"></div>
+            <div class="zuo"></div>
+            <div class="you"></div>
+            <div class="qian"></div>
+            <div class="hou"></div>
+        </div>
+
+        <div class="z-box wu_3d user_shoubi user_tou">
+            <div class="shang"></div>
+            <div class="xia"></div>
+            <div class="zuo"></div>
+            <div class="you"></div>
+            <div class="qian"></div>
+            <div class="hou"></div>
+        </div>
+    </div>
+
+</div>
+<script>
+</script>
+</body>
+</html>
